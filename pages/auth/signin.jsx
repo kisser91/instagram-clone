@@ -31,7 +31,6 @@ function signIn({providers}) {
 // Server side Render
 export async function getServerSideProps() {
     const providers = await getProviders();
-    console.log("asdas",providers);
    return {
        props: {
            providers,

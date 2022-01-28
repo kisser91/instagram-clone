@@ -6,7 +6,6 @@ import Post from "./Post";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
-    const [comments, setComments] = useState([]);
 
     useEffect(()=> onSnapshot(
         query(collection(db, 'posts'), orderBy('timestamp', 'desc')), snapshot => {
