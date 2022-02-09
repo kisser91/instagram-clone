@@ -12,6 +12,7 @@ function signIn({providers}) {
                 This is not a REAL app, it is built for  educational purposes only
             </p>
             <div className=" bg-yellow-500 mt-32">
+            {console.log("providers => ",providers)}
             {Object.values(providers).map((provider) => (
                 < div key={provider.name} className="mx-auto" >
                     <button 
@@ -31,11 +32,12 @@ function signIn({providers}) {
 // Server side Render
 export async function getServerSideProps() {
     const providers = await getProviders();
-   return {
+    console.log("providers async function => ",providers)
+    return {
        props: {
            providers,
        },
-   };
+    };
 }
 
 export default signIn;
